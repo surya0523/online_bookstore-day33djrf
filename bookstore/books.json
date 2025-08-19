@@ -1,0 +1,227 @@
+[
+  {
+    "model": "bookstore.category",
+    "pk": 1,
+    "fields": {
+      "name": "Fiction"
+    }
+  },
+  {
+    "model": "bookstore.category",
+    "pk": 2,
+    "fields": {
+      "name": "Science Fiction"
+    }
+  },
+  {
+    "model": "bookstore.category",
+    "pk": 3,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "bookstore.author",
+    "pk": 1,
+    "fields": {
+      "name": "J.R.R. Tolkien",
+      "bio": "English writer, poet, philologist, and university professor."
+    }
+  },
+  {
+    "model": "bookstore.author",
+    "pk": 2,
+    "fields": {
+      "name": "Frank Herbert",
+      "bio": "American science fiction author."
+    }
+  },
+  {
+    "model": "bookstore.author",
+    "pk": 3,
+    "fields": {
+      "name": "Stephen King",
+      "bio": "American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels."
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Hobbit",
+      "author": 1,
+      "category": 3,
+      "price": "15.99",
+      "rating": "4.80",
+      "published_date": "1937-09-21"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 2,
+    "fields": {
+      "title": "Dune",
+      "author": 2,
+      "category": 2,
+      "price": "20.50",
+      "rating": "4.75",
+      "published_date": "1965-08-01"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 3,
+    "fields": {
+      "title": "The Shining",
+      "author": 3,
+      "category": 1,
+      "price": "18.00",
+      "rating": "4.60",
+      "published_date": "1977-01-28"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Lord of the Rings",
+      "author": 1,
+      "category": 3,
+      "price": "29.99",
+      "rating": "4.90",
+      "published_date": "1954-07-29"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 5,
+    "fields": {
+      "title": "IT",
+      "author": 3,
+      "category": 1,
+      "price": "22.75",
+      "rating": "4.50",
+      "published_date": "1986-09-15"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 6,
+    "fields": {
+      "title": "Foundation",
+      "author": 2,
+      "category": 2,
+      "price": "16.50",
+      "rating": "4.65",
+      "published_date": "1951-06-01"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 7,
+    "fields": {
+      "title": "Misery",
+      "author": 3,
+      "category": 1,
+      "price": "14.99",
+      "rating": "4.45",
+      "published_date": "1987-06-08"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 8,
+    "fields": {
+      "title": "The Silmarillion",
+      "author": 1,
+      "category": 3,
+      "price": "19.99",
+      "rating": "4.30",
+      "published_date": "1977-09-15"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 9,
+    "fields": {
+      "title": "Children of Dune",
+      "author": 2,
+      "category": 2,
+      "price": "21.00",
+      "rating": "4.55",
+      "published_date": "1976-03-21"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 10,
+    "fields": {
+      "title": "The Stand",
+      "author": 3,
+      "category": 1,
+      "price": "25.00",
+      "rating": "4.70",
+      "published_date": "1978-01-01"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 11,
+    "fields": {
+      "title": "The Road",
+      "author": 3,
+      "category": 1,
+      "price": "16.00",
+      "rating": "4.20",
+      "published_date": "2006-09-26"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 12,
+    "fields": {
+      "title": "A Scanner Darkly",
+      "author": 2,
+      "category": 2,
+      "price": "14.00",
+      "rating": "4.15",
+      "published_date": "1977-01-01"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 13,
+    "fields": {
+      "title": "The Shining",
+      "author": 3,
+      "category": 1,
+      "price": "18.00",
+      "rating": "4.60",
+      "published_date": "1977-01-28"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 14,
+    "fields": {
+      "title": "The Blade Itself",
+      "author": 1,
+      "category": 3,
+      "price": "17.00",
+      "rating": "4.55",
+      "published_date": "2006-05-04"
+    }
+  },
+  {
+    "model": "bookstore.book",
+    "pk": 15,
+    "fields": {
+      "title": "I, Robot",
+      "author": 2,
+      "category": 2,
+      "price": "13.50",
+      "rating": "4.25",
+      "published_date": "1950-12-02"
+    }
+  }
+]

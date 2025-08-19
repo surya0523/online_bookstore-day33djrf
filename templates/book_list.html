@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Book List</h1>
+
+<form method="get" class="mb-4">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <input type="text" name="search" class="form-control" placeholder="Search by title or author" value="{{ request.GET.search }}">
+        </div>
+        <div class="col-md-2">
+            <select name="category" class="form-select">
+                <option value="">All Categories</option>
+                </select>
+        </div>
+        <div class="col-md-2">
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" name="price_min" class="form-control" placeholder="Min Price" value="{{ request.GET.price_min }}">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" name="price_max" class="form-control" placeholder="Max Price" value="{{ request.GET.price_max }}">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <select name="ordering" class="form-select">
+                <option value="">Order By...</option>
+                <option value="rating" {% if request.GET.ordering == 'rating' %}selected{% endif %}>Rating (Asc)</option>
+                <option value="-rating" {% if request.GET.ordering == '-rating' %}selected{% endif %}>Rating (Desc)</option>
+                <option value="published_date" {% if request.GET.ordering == 'published_date' %}selected{% endif %}>Date (Oldest)</option>
+                <option value="-published_date" {% if request.GET.ordering == '-published_date' %}selected{% endif %}>Date (Newest)</option>
+                <option value="price" {% if request.GET.ordering == 'price' %}selected{% endif %}>Price (Low to High)</option>
+                <option value="-price" {% if request.GET.ordering == '-price' %}selected{% endif %}>Price (High to Low)</option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </div>
+</form>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for book in books_data.results %}
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">by {{ book.author_name }}</h6>
+                <p class="card-text">
+                    <strong>Category:</strong> {{ book.category_name }}<br>
+                    <strong>Price:</strong> ${{ book.price }}<br>
+                    <strong>Rating:</strong> {{ book.rating }} ⭐<br>
+                    <strong>Published:</strong> {{ book.published_date }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="col-12">No books found matching your criteria.</p>
+    {% endfor %}
+</div>
+
+<nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+        {% if books_data.previous %}
+        <li class="page-item"><a class="page-link" href="{{ books_data.previous }}&search={{ request.GET.search }}&ordering={{ request.GET.ordering }}&category={{ request.GET.category }}">Previous</a></li>
+        {% endif %}
+        {% if books_data.next %}
+        <li class="page-item"><a class="page-link" href="{{ books_data.next }}&search={{ request.GET.search }}&ordering={{ request.GET.ordering }}&category={{ request.GET.category }}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}
